@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const products = [
   {
@@ -9,6 +10,7 @@ const products = [
     price: "$89-$299",
     rating: 4.8,
     reviews: 2847,
+    image: "/images/air-fryer.jpg",
     affiliateLink: "#",
     seoContent: {
       intro: "Air fryers have revolutionized home cooking, offering a healthier alternative to traditional frying while maintaining that crispy texture we all love. After testing over 50 models in 2026, we've identified the top performers that deliver exceptional results.",
@@ -26,6 +28,7 @@ const products = [
   },
   {
     id: 2,
+    image: "/images/robot-vacuum.jpg",
     title: "Top Robot Vacuums for Pet Hair",
     category: "Home Cleaning",
     description: "Say goodbye to pet hair with these powerful robot vacuums designed for fur removal.",
@@ -49,6 +52,7 @@ const products = [
   },
   {
     id: 3,
+    image: "/images/massage-gun.jpg",
     title: "Best Massage Guns for Recovery",
     category: "Fitness & Wellness",
     description: "Professional-grade massage guns for muscle recovery and pain relief at home.",
@@ -72,6 +76,7 @@ const products = [
   },
   {
     id: 4,
+    image: "/images/bedding.jpg",
     title: "Premium Bedding Sets Guide",
     category: "Bedroom Essentials",
     description: "Luxury bedding sets that transform your sleep experience. Thread counts, materials, and more.",
@@ -95,6 +100,7 @@ const products = [
   },
   {
     id: 5,
+    image: "/images/air-purifier.jpg",
     title: "Best Air Purifiers 2026",
     category: "Home Health",
     description: "Clean air solutions for allergies, pets, and pollution. HEPA filters tested.",
@@ -118,6 +124,7 @@ const products = [
   },
   {
     id: 6,
+    image: "/images/running-shoes.jpg",
     title: "Women's Running Shoes Reviews",
     category: "Athletic Footwear",
     description: "Find your perfect running companion. Cushioning, support, and style combined.",
@@ -141,6 +148,7 @@ const products = [
   },
   {
     id: 7,
+    image: "/images/security-camera.jpg",
     title: "Smart Security Cameras Compared",
     category: "Smart Home",
     description: "Protect your home with intelligent security cameras featuring night vision and alerts.",
@@ -164,6 +172,7 @@ const products = [
   },
   {
     id: 8,
+    image: "/images/jewelry.jpg",
     title: "Affordable Jewelry Brands Under $100",
     category: "Fashion Accessories",
     description: "Look expensive on a budget. Quality jewelry that won't break the bank.",
@@ -187,6 +196,7 @@ const products = [
   },
   {
     id: 9,
+    image: "/images/coffee-maker.jpg",
     title: "Coffee Makers: Complete Guide",
     category: "Kitchen Appliances",
     description: "From drip to espresso, find the perfect coffee maker for your morning routine.",
@@ -210,6 +220,7 @@ const products = [
   },
   {
     id: 10,
+    image: "/images/yoga-mat.jpg",
     title: "Best Yoga Mats 2026",
     category: "Fitness Equipment",
     description: "Enhance your practice with premium yoga mats offering grip, cushioning, and durability.",
@@ -233,6 +244,7 @@ const products = [
   },
   {
     id: 11,
+    image: "/images/cookware.jpg",
     title: "Stainless Steel Cookware Sets",
     category: "Kitchen Essentials",
     description: "Professional-quality stainless steel cookware for serious home cooks.",
@@ -256,6 +268,7 @@ const products = [
   },
   {
     id: 12,
+    image: "/images/sneakers.jpg",
     title: "All-Day Comfort Sneakers",
     category: "Casual Footwear",
     description: "Stylish sneakers designed for all-day wear at work or on weekends.",
@@ -279,6 +292,7 @@ const products = [
   },
   {
     id: 13,
+    image: "/images/floor-cleaner.jpg",
     title: "Floor Cleaners: Steam vs Traditional",
     category: "Cleaning Supplies",
     description: "Achieve sparkling floors with the most effective cleaning methods and tools.",
@@ -302,6 +316,7 @@ const products = [
   },
   {
     id: 14,
+    image: "/images/watch.jpg",
     title: "Men's Watches Under $200",
     category: "Men's Accessories",
     description: "Quality timepieces that elevate your style without the luxury price tag.",
@@ -325,6 +340,7 @@ const products = [
   },
   {
     id: 15,
+    image: "/images/kitchen-gadgets.jpg",
     title: "Essential Kitchen Gadgets 2026",
     category: "Kitchen Tools",
     description: "Clever kitchen tools that save time and make cooking more enjoyable.",
@@ -366,19 +382,23 @@ export default function BrandReviews() {
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <article key={product.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200 overflow-hidden flex flex-col">
-              {/* Product Image Placeholder */}
-              <div className="h-56 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-7xl opacity-50">📦</span>
-                </div>
+            <article key={product.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden flex flex-col group">
+              {/* Product Image */}
+              <div className="h-56 relative overflow-hidden bg-gray-100">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-primary-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-primary-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
                     {product.category}
                   </span>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded">
+                  <span className="bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded shadow-lg">
                     ⭐ {product.rating}
                   </span>
                 </div>
