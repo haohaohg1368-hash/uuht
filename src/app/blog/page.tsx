@@ -29,7 +29,7 @@ const blogPosts = [
     category: "Fitness & Wellness",
     date: "June 10, 2026",
     readTime: "12 min read",
-    image: "/images/blog-massage-gun.jpg"
+    image: "/images/blogmassage-gun.jpg"
   },
   {
     id: 4,

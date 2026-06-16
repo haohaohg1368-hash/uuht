@@ -68,7 +68,7 @@ export const blogPosts = [
     category: "Fitness & Wellness",
     date: "June 10, 2026",
     readTime: "12 min read",
-    image: "/images/blog-massage-gun.jpg",
+    image: "/images/blogmassage-gun.jpg",
     content: `
       <h2>Why Athletes Love Massage Guns</h2>
       <p>Massage guns have become essential tools for athletes and fitness enthusiasts seeking effective muscle recovery. These percussion therapy devices help reduce soreness, improve circulation, and enhance flexibility—all from the comfort of your home.</p>
