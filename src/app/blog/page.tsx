@@ -1,142 +1,143 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 const blogPosts = [
   {
     id: 1,
     title: "Top 10 Best Air Fryers of 2026: Complete Buyer's Guide",
-    excerpt: "Discover the best air fryers for healthy cooking. We tested 50+ models to find the top performers in capacity, features, and value.",
+    excerpt: "Transform your kitchen with healthy cooking. Discover how air fryers make crispy meals with 80% less oil, perfect for busy families.",
     category: "Kitchen Appliances",
     date: "June 15, 2026",
     readTime: "8 min read",
-    image: "/images/air-fryer.jpg"
+    image: "/images/blog-air-fryer.jpg"
   },
   {
     id: 2,
     title: "Best Robot Vacuums for Pet Owners: 2026 Reviews",
-    excerpt: "Tired of pet hair? These robot vacuums handle fur, dander, and debris with ease. Find the perfect cleaning companion for your home.",
+    excerpt: "Say goodbye to pet hair struggles. Smart robot vacuums that keep your home spotless while you enjoy quality time with your furry friends.",
     category: "Home Cleaning",
     date: "June 12, 2026",
     readTime: "10 min read",
-    image: "/images/robot-vacuum.jpg"
+    image: "/images/blog-robot-vacuum.jpg"
   },
   {
     id: 3,
     title: "Massage Gun Showdown: Top 10 Recovery Tools Compared",
-    excerpt: "From budget-friendly to premium options, we review the best massage guns for muscle recovery and pain relief.",
+    excerpt: "Level up your fitness recovery. Professional-grade massage guns that help athletes and gym-goers bounce back faster after intense workouts.",
     category: "Fitness & Wellness",
     date: "June 10, 2026",
     readTime: "12 min read",
-    image: "/images/massage-gun.jpg"
+    image: "/images/blog-massage-gun.jpg"
   },
   {
     id: 4,
     title: "Best Bedding Sets for Every Season: 2026 Guide",
-    excerpt: "Sleep better with our top picks for sheets, comforters, and pillows. Expert recommendations for all budgets and preferences.",
+    excerpt: "Create your dream bedroom sanctuary. Luxury bedding that transforms your sleep experience and makes every morning feel like a vacation.",
     category: "Bedroom Essentials",
     date: "June 8, 2026",
     readTime: "9 min read",
-    image: "/images/bedding.jpg"
+    image: "/images/blog-bedding.jpg"
   },
   {
     id: 5,
     title: "Air Purifiers That Actually Work: 2026 Testing Results",
-    excerpt: "Clean air matters. We lab-tested popular air purifiers to find which ones truly remove allergens, pollutants, and odors.",
+    excerpt: "Breathe easier at home. Discover which air purifiers truly deliver clean, fresh air for allergy sufferers and health-conscious families.",
     category: "Home Health",
     date: "June 5, 2026",
     readTime: "11 min read",
-    image: "/images/air-purifier.jpg"
+    image: "/images/blog-air-purifier.jpg"
   },
   {
     id: 6,
     title: "Best Running Shoes for Women: 2026 Expert Picks",
-    excerpt: "Find your perfect stride with our comprehensive guide to women's running shoes. Tested by real runners for comfort and performance.",
+    excerpt: "Find your perfect running companion. Comfortable, stylish shoes that support your fitness journey from morning jogs to weekend adventures.",
     category: "Athletic Footwear",
     date: "June 3, 2026",
     readTime: "10 min read",
-    image: "/images/running-shoes.jpg"
+    image: "/images/blog-running-shoes.jpg"
   },
   {
     id: 7,
     title: "Smart Home Security Cameras: Top 10 Choices for 2026",
-    excerpt: "Protect your home with the best security cameras. Features, pricing, and privacy considerations explained.",
+    excerpt: "Protect what matters most. Modern security cameras that give you peace of mind with smart features and crystal-clear monitoring.",
     category: "Smart Home",
     date: "May 30, 2026",
     readTime: "9 min read",
-    image: "/images/security-camera.jpg"
+    image: "/images/blog-security-camera.jpg"
   },
   {
     id: 8,
     title: "Best Jewelry Brands Under $100: Affordable Luxury Guide",
-    excerpt: "Look expensive without breaking the bank. Our favorite affordable jewelry brands that deliver quality and style.",
+    excerpt: "Elevate your style without breaking the bank. Elegant jewelry pieces that add sophistication to any outfit, from office to evening.",
     category: "Fashion Accessories",
     date: "May 28, 2026",
     readTime: "7 min read",
-    image: "/images/jewelry.jpg"
+    image: "/images/blog-jewelry.jpg"
   },
   {
     id: 9,
     title: "Coffee Makers Reviewed: From Espresso to Cold Brew",
-    excerpt: "Start your day right. We tested drip coffee makers, espresso machines, and cold brew systems to find the best options.",
+    excerpt: "Start your day with café-quality coffee. Discover machines that bring barista-level brewing to your kitchen counter every morning.",
     category: "Kitchen Appliances",
     date: "May 25, 2026",
     readTime: "11 min read",
-    image: "/images/coffee-maker.jpg"
+    image: "/images/blog-coffee-maker.jpg"
   },
   {
     id: 10,
     title: "Best Yoga Mats for Every Practice: 2026 Comparison",
-    excerpt: "Enhance your yoga practice with the right mat. Thickness, grip, durability, and eco-friendly options reviewed.",
+    excerpt: "Enhance your mindfulness journey. Premium yoga mats that provide stability, comfort, and grip for practitioners of all levels.",
     category: "Fitness Equipment",
     date: "May 22, 2026",
     readTime: "8 min read",
-    image: "/images/yoga-mat.jpg"
+    image: "/images/blog-yoga-mat.jpg"
   },
   {
     id: 11,
     title: "Stainless Steel Cookware Sets: Worth the Investment?",
-    excerpt: "Professional-quality cookware for home chefs. We compare top stainless steel sets for durability and performance.",
+    excerpt: "Unleash your inner chef. Professional-quality cookware that makes home cooking a joy and lasts for generations.",
     category: "Kitchen Essentials",
     date: "May 20, 2026",
     readTime: "10 min read",
-    image: "/images/cookware.jpg"
+    image: "/images/blog-cookware.jpg"
   },
   {
     id: 12,
     title: "Best Sneakers for All-Day Comfort: 2026 Edition",
-    excerpt: "Stand and walk comfortably all day long. Our top picks for work-appropriate sneakers that don't sacrifice style.",
+    excerpt: "Step into urban style. Versatile sneakers that seamlessly transition from work meetings to weekend outings in comfort.",
     category: "Casual Footwear",
     date: "May 18, 2026",
     readTime: "8 min read",
-    image: "/images/sneakers.jpg"
+    image: "/images/blog-sneakers.jpg"
   },
   {
     id: 13,
     title: "Floor Cleaners Compared: Steam Mops vs. Traditional",
-    excerpt: "Get sparkling clean floors. We test steam mops, spray mops, and traditional methods to find the most effective solutions.",
+    excerpt: "Achieve sparkling floors effortlessly. Modern cleaning solutions that make household chores quick and satisfying.",
     category: "Cleaning Supplies",
     date: "May 15, 2026",
     readTime: "9 min read",
-    image: "/images/floor-cleaner.jpg"
+    image: "/images/blog-floor-cleaner.jpg"
   },
   {
     id: 14,
     title: "Best Watches for Men Under $200: Style Meets Value",
-    excerpt: "Elevate your wrist game without overspending. Quality timepieces that look expensive but won't break the bank.",
+    excerpt: "Complete your professional look. Quality timepieces that add elegance to any outfit without the luxury price tag.",
     category: "Men's Accessories",
     date: "May 12, 2026",
     readTime: "10 min read",
-    image: "/images/watches.jpg"
+    image: "/images/blog-watch.jpg"
   },
   {
     id: 15,
     title: "Essential Kitchen Gadgets You Didn't Know You Needed",
-    excerpt: "Upgrade your cooking game with these clever kitchen tools. From prep to cleanup, make cooking easier and more fun.",
+    excerpt: "Upgrade your cooking game. Clever tools that save time, reduce stress, and make meal prep actually enjoyable.",
     category: "Kitchen Tools",
     date: "May 10, 2026",
     readTime: "7 min read",
-    image: "/images/kitchen-gadgets.jpg"
+    image: "/images/blog-kitchen-gadgets.jpg"
   }
 ];
 
@@ -172,12 +173,18 @@ export default function BlogPage() {
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+            <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 group">
               <Link href={`/blog/${post.id}`}>
                 <div className="block">
-                  {/* Image Placeholder */}
-                  <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                    <span className="text-primary-600 text-6xl">📦</span>
+                  {/* Blog Image */}
+                  <div className="h-48 relative overflow-hidden bg-gray-100">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
                   
                   <div className="p-6">
@@ -188,7 +195,7 @@ export default function BlogPage() {
                       <span className="text-xs text-gray-500">{post.readTime}</span>
                     </div>
                     
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-primary-600 transition-colors">
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors">
                       {post.title}
                     </h2>
                     
@@ -198,7 +205,7 @@ export default function BlogPage() {
                     
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <span className="text-sm text-gray-500">{post.date}</span>
-                      <span className="text-primary-600 font-medium text-sm hover:text-primary-700">
+                      <span className="text-primary-600 font-medium text-sm group-hover:text-primary-700 transition-colors">
                         Read More →
                       </span>
                     </div>
