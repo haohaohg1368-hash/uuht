@@ -388,11 +388,6 @@ export default function BrandReviews() {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
-                    {product.category}
-                  </span>
-                </div>
                 <div className="absolute top-4 right-4">
                   <span className="bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded shadow-lg">
                     ⭐ {product.rating}
