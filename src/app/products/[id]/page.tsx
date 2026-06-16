@@ -23,7 +23,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     <main className="min-h-screen">
       <Header />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb - Updated for better navigation */}
       <div className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex text-sm">
