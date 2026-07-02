@@ -6,8 +6,8 @@ interface AdminAuthProps {
   children: React.ReactNode;
 }
 
-// 管理员密码 (建议修改为强密码)
-const ADMIN_PASSWORD = 'uuht2026admin';
+// 管理员密码 - 请修改为您自己的强密码
+const ADMIN_PASSWORD = 'YourSecurePassword2026!';
 
 export default function AdminAuth({ children }: AdminAuthProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -96,17 +96,6 @@ export default function AdminAuth({ children }: AdminAuthProps) {
               登录
             </button>
           </form>
-
-          {/* Help Text */}
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <p className="text-sm text-blue-800">
-              <strong>💡 提示:</strong><br />
-              默认密码: <code className="bg-white px-2 py-1 rounded">uuht2026admin</code><br />
-              <span className="text-xs mt-2 block">
-                建议在代码中修改为更安全的密码
-              </span>
-            </p>
-          </div>
         </div>
       </div>
     );
