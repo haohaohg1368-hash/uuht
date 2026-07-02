@@ -127,8 +127,30 @@ export default function LinksManager() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation Bar */}
+      <nav className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center space-x-8">
+              <a href="/" className="text-xl font-bold text-gray-900">UUHT</a>
+              <div className="hidden md:flex space-x-4">
+                <a href="/admin/links" className="px-3 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600">
+                  链接管理
+                </a>
+                <a href="/admin/stats" className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+                  数据统计
+                </a>
+                <a href="/admin/tracking-template" className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+                  追踪模板
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">联盟链接管理</h1>
