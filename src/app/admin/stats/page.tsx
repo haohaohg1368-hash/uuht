@@ -51,6 +51,8 @@ export default function StatsDashboard() {
   }
 
   return (
+    <AdminAuth>
+    <AdminAuth>
     <div className="min-h-screen bg-gray-50">
       {/* Navigation Bar */}
       <nav className="bg-white shadow-sm border-b">
