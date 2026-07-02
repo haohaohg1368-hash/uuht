@@ -7,6 +7,7 @@ interface AffiliateLink {
   slug: string;
   title: string;
   destination_url: string;
+  landing_page_url?: string;
   merchant?: string;
   category?: string;
   clicks: number;
@@ -23,6 +24,7 @@ export default function LinksManager() {
     slug: '',
     title: '',
     destination_url: '',
+    landing_page_url: '',
     merchant: '',
     category: '',
     notes: ''
@@ -71,6 +73,7 @@ export default function LinksManager() {
         slug: '',
         title: '',
         destination_url: '',
+        landing_page_url: '',
         merchant: '',
         category: '',
         notes: ''
@@ -93,6 +96,7 @@ export default function LinksManager() {
       slug: link.slug,
       title: link.title,
       destination_url: link.destination_url,
+      landing_page_url: link.landing_page_url || '',
       merchant: link.merchant || '',
       category: link.category || '',
       notes: ''
@@ -276,16 +280,36 @@ export default function LinksManager() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  目标链接（联盟链接）*
+                  最终落地页 URL *
+                </label>
+                <input
+                  type="url"
+                  value={formData.landing_page_url || ''}
+                  onChange={(e) => setFormData({ ...formData, landing_page_url: e.target.value })}
+                  placeholder="https://www.amazon.com/dp/B08N5WRWNW"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500"
+                  required
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  💡 不带追踪参数的干净 URL，用于 Google Ads 最终到达网址
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  完整联盟链接（带追踪参数）*
                 </label>
                 <textarea
                   value={formData.destination_url}
                   onChange={(e) => setFormData({ ...formData, destination_url: e.target.value })}
-                  placeholder="https://..."
+                  placeholder="https://www.amazon.com/dp/B08N5WRWNW?tag=yourtag-20&ref=xxx"
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500"
                   rows={3}
                   required
                 />
+                <p className="text-xs text-gray-500 mt-1">
+                  包含 affiliate ID 和其他追踪参数的完整链接
+                </p>
               </div>
 
               <div>

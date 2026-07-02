@@ -25,7 +25,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { slug, title, destination_url, merchant, category, notes } = body;
+    const { slug, title, destination_url, landing_page_url, merchant, category, notes } = body;
 
     // 验证必填字段
     if (!slug || !title || !destination_url) {
@@ -49,6 +49,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // 如果没有提供 landing_page_url，使用 destination_url 作为默认值
+    const finalLandingPageUrl = landing_page_url || destination_url.split('?')[0];
+
     // 创建新链接
     const { data, error } = await supabase
       .from('affiliate_links')
@@ -56,6 +59,7 @@ export async function POST(request: NextRequest) {
         slug,
         title,
         destination_url,
+        landing_page_url: finalLandingPageUrl,
         merchant,
         category,
         notes,

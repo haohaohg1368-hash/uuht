@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads 追踪模板快速开始指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; padding: 3rem 2rem; margin-bottom: 2rem; text-align: center; }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.1rem; opacity: 0.95; }
+        .card { background: white; border-radius: 8px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .card h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #667eea; }
+        .card h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; color: #333; }
+        .code { background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem; margin: 1rem 0; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; word-break: break-all; }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #667eea; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; margin: 0.5rem 0.25rem; transition: background 0.2s; }
+        .btn:hover { background: #5568d3; }
+        .btn-secondary { background: #6c757d; }
+        .btn-secondary:hover { background: #5a6268; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        .highlight { background: #e7f3ff; border-left: 4px solid #667eea; padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+        .success { background: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+        ol { margin-left: 1.5rem; }
+        ol li { margin-bottom: 0.5rem; }
+        .param-list { list-style: none; }
+        .param-list li { padding: 0.5rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between; }
+        .param-name { font-family: monospace; color: #667eea; font-weight: 500; }
+        .param-desc { color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1> Google Ads 追踪模板功能已上线!</h1>
+            <p>与 LinkHaiTao 相同的 {lpurl} 模式,完全掌控您的联盟链接追踪</p>
+        </div>
+
+        <div class="card">
+            <h2>📋 工作原理对比</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>步骤</th>
+                        <th>LinkHaiTao</th>
+                        <th>您的系统 (UUHT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. 设置追踪模板</strong></td>
+                        <td>{lpurl}?mmc=xxx&ranMID=xxx</td>
+                        <td>{lpurl}?utm_source=google&campaign={campaignid}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. 设置最终网址</strong></td>
+                        <td>https://www.adidas.ae/en</td>
+                        <td>https://www.uuht.shop/go/air-fryer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. 用户点击广告</strong></td>
+                        <td colspan="2">Google 自动替换 {lpurl} 并附加参数</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. 实际跳转</strong></td>
+                        <td>https://www.adidas.ae/en?mmc=...&ranMID=...</td>
+                        <td>https://www.uuht.shop/go/air-fryer?utm_source=google&...</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. 数据处理</strong></td>
+                        <td>LinkHaiTao 服务器处理</td>
+                        <td><strong>✅ 您的系统记录 + 跳转到 Amazon</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. 最终到达</strong></td>
+                        <td>Adidas 网站 (带联盟参数)</td>
+                        <td>Amazon 网站 (带联盟参数 + UTM 参数)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight">
+                <strong>💡 核心优势:</strong><br>
+                • 您拥有完整的数据控制权<br>
+                • 无需依赖第三方平台<br>
+                • 可以自定义任意追踪参数<br>
+                • 实时查看点击统计和转化数据
+            </div>
+        </div>
+
+        <div class="card">
+            <h2> 快速开始 (3 步完成)</h2>
+            
+            <h3>步骤 1: 访问追踪模板生成器</h3>
+            <p>等待 Vercel 部署完成后,访问:</p>
+            <div class="code">https://www.uuht.shop/admin/tracking-template</div>
+            <a href="https://www.uuht.shop/admin/tracking-template" target="_blank" class="btn">打开追踪模板生成器 →</a>
+            
+            <h3>步骤 2: 生成追踪模板</h3>
+            <ol>
+                <li>选择要推广的短链接 (如 air-fryer)</li>
+                <li>选择快速模板或自定义参数</li>
+                <li>点击 "生成追踪模板"</li>
+                <li>复制生成的模板和最终到达网址</li>
+            </ol>
+            
+            <h3>步骤 3: 在 Google Ads 中配置</h3>
+            <ol>
+                <li>登录 <a href="https://ads.google.com/" target="_blank">Google Ads</a></li>
+                <li>进入广告系列设置 → "广告系列网址选项"</li>
+                <li>粘贴追踪模板到 "跟踪模板" 字段</li>
+                <li>在广告的 "最终到达网址" 中输入短链接</li>
+                <li>保存并发布广告</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>💡 实际示例</h2>
+            
+            <h3>场景: 推广 Amazon 空气炸锅</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <strong>追踪模板:</strong>
+                    <div class="code">{lpurl}?utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&affiliate_id=YOUR_ID</div>
+                </div>
+                <div>
+                    <strong>最终到达网址:</strong>
+                    <div class="code">https://www.uuht.shop/go/air-fryer</div>
+                </div>
+            </div>
+            
+            <div class="success">
+                <strong>✅ 实际效果:</strong><br>
+                用户点击广告后:<br>
+                1️ 跳转到: <code>https://www.uuht.shop/go/air-fryer?utm_source=google&...</code><br>
+                2️⃣ 系统记录点击和所有参数<br>
+                3️ 自动跳转到: <code>https://www.amazon.com/dp/B08N5WRWNW?tag=yourtag-20&utm_source=google&...</code><br>
+                4️ 用户购买 → 您获得佣金 💰
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📚 Google Ads 动态参数参考</h2>
+            
+            <ul class="param-list">
+                <li><span class="param-name">{campaignid}</span><span class="param-desc">广告系列 ID</span></li>
+                <li><span class="param-name">{adgroupid}</span><span class="param-desc">广告组 ID</span></li>
+                <li><span class="param-name">{keyword}</span><span class="param-desc">触发广告的关键词</span></li>
+                <li><span class="param-name">{matchtype}</span><span class="param-desc">匹配类型 (exact/phrase/broad)</span></li>
+                <li><span class="param-name">{creative}</span><span class="param-desc">广告创意 ID</span></li>
+                <li><span class="param-name">{device}</span><span class="param-desc">设备类型 (mobile/desktop/tablet)</span></li>
+                <li><span class="param-name">{gclid}</span><span class="param-desc">Google Click ID (用于转化追踪)</span></li>
+                <li><span class="param-name">{lpurl}</span><span class="param-desc">落地页网址 (自动替换为最终到达网址)</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🔗 快速链接</h2>
+            <a href="https://www.uuht.shop/admin/tracking-template" target="_blank" class="btn">追踪模板生成器</a>
+            <a href="https://www.uuht.shop/admin/links" target="_blank" class="btn btn-secondary">链接管理</a>
+            <a href="https://www.uuht.shop/admin/stats" target="_blank" class="btn btn-secondary">数据统计</a>
+            <a href="https://vercel.com/haohaohg1368-hash/uuht/deployments" target="_blank" class="btn btn-secondary">Vercel 部署状态</a>
+        </div>
+
+        <div class="highlight">
+            <strong> 详细文档:</strong><br>
+            完整的使用指南请查看项目中的 <code>TRACKING_TEMPLATE_GUIDE.md</code> 文件。<br>
+            包含常见问题、最佳实践和技术实现细节。
+        </div>
+    </div>
+</body>
+</html>
