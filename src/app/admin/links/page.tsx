@@ -167,6 +167,7 @@ export default function LinksManager() {
                 slug: '',
                 title: '',
                 destination_url: '',
+                landing_page_url: '',
                 merchant: '',
                 category: '',
                 notes: ''
