@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import AdminAuth from '@/components/AdminAuth';
 
 interface AffiliateLink {
   id: string;
@@ -358,5 +359,6 @@ export default function LinksManager() {
         </div>
       )}
     </div>
+    </AdminAuth>
   );
 }

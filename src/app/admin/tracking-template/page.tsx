@@ -1,5 +1,6 @@
 'use client';
 
+import AdminAuth from '@/components/AdminAuth';
 import { useState, useEffect } from 'react';
 
 interface AffiliateLink {
